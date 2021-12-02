@@ -1,8 +1,9 @@
 import { Navbar,Container,NavDropdown,Nav } from "react-bootstrap";
+import Cartwidget from "../CartWidget";
 const NavBar = ()=>{
     return (
        <div> 
-           <Navbar variant="dark" bg="dark" expand="lg">
+           <Navbar variant="light" bg="" expand="lg">
   <Container>
     <Navbar.Brand href="#home">MENU</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -18,6 +19,7 @@ const NavBar = ()=>{
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
+    <Cartwidget/>
   </Container>
 </Navbar>
 

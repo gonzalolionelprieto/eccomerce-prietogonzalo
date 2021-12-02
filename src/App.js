@@ -1,15 +1,21 @@
 
 import './styles/style.css'
-import './components/NavBar.js'
-import NavBar from './components/NavBar.js'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.js';
+import NavBar from './components/NavBar/NavBar.js'
+
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         
-       <NavBar /> 
-          
+
+
+       <NavBar/> 
+       hola soy app eccomerce
+
+       <ItemListContainer greeting="ejemplo de item" />
           
       </header>
     </div>

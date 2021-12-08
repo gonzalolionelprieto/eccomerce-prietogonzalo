@@ -3,6 +3,9 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer.
 import NavBar from "./components/NavBar/NavBar.js";
 
 function App() {
+
+ 
+
   return (
     <div className="App text-center">
       <header className="App-header ">
@@ -14,7 +17,6 @@ function App() {
           <div className="col-12">
             <ItemListContainer greeting="Ejemplo de item" />
           </div>
-         
         </div>
       </main>
     </div>

@@ -1,29 +1,40 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
-const ItemCount =({ max,inicial })=>{
 
-    const [value,setValue]=useState(inicial)
 
-    const Suma =()=>{
-        value > inicial ? setValue(value + 1):alert("compra maxima")
+function Contador({max,inicial}) {
+
+  const [count, setCount] = useState(inicial); //aca se le asigna un valor inicial en este caso a count de 0
+
+  const Suma = () => {
+    count < max ? setCount(prev => prev + 1):alert("compra maxima"); //  ahora se esta haciendo uso de la funcion set para decirle que sume 1 al valor 
+      
+      
+    
+  };
+  const Resta = () => {
+    count > inicial ?setCount(prev => prev - 1):alert("compra minima"); //  ahora se esta haciendo uso de la funcion set para decirle que reste 1 al valor 
     }
+   
 
-    const Resta =()=>{
-        value > inicial ? setValue(value - 1):alert("compra minima")
-    }
+   const Agregar=()=>{
+   console.log("agregaste "+ count +" al carrito")
+   } 
+  
 
-    return(
-
-        <div>
-            <h1>
-                {value}
-            </h1>
-            <button onClick={Suma} >+</button>
-            <button onClick={Resta}>-</button>
-            <button onClick>Reset</button>
-        </div>
-
-    )
-
+  return (
+    <div>
+      <p> {count} </p>
+      <button className="col-2" onClick={Suma}>
+        +
+      </button>
+      <button className="col-2" onClick={Resta}>
+        -
+      </button>
+      <br></br>
+      <button className="col-4" onClick={Agregar}>Agregar al carrito</button>
+    </div>
+  );
 }
-export default ItemCount;
+
+export default Contador;

@@ -15,7 +15,7 @@ function App() {
       <main className="container">
         <div className="row">
           <div className="col-12">
-            <ItemListContainer greeting="Ejemplo de item" />
+            <ItemListContainer  />
           </div>
         </div>
       </main>

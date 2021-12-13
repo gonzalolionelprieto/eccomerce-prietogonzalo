@@ -1,6 +1,7 @@
 import "./styles/style.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer.js";
 import NavBar from "./components/NavBar/NavBar.js";
+import ItemDetaillContainer from "./components/itemDetaillContainer/itemDetaillContainer";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <div className="row">
           <div className="col-12">
             <ItemListContainer  />
+            <ItemDetaillContainer/>
           </div>
         </div>
       </main>

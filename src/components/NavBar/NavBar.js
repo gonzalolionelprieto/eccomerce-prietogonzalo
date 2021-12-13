@@ -11,11 +11,9 @@ const NavBar = () => {
             <Nav className="me-auto">
               <Nav.Link href="#home">INICIO</Nav.Link>
               <NavDropdown title="CATEGORIAS" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">REMERAS</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">BUZOS</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  ZAPATILLAS
-                </NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.1">Gorra Semi-flat</NavDropdown.Item>
+                <NavDropdown.Item href="#action/3.2">Gorras Flat</NavDropdown.Item>
+                
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.4">
                   PROMOCIONES

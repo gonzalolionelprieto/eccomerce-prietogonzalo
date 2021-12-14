@@ -25,14 +25,14 @@ function Contador({max,inicial}) {
   return (
     <div>
       <p> {count} </p>
-      <button className="col-4 btn btn-outline-primary" onClick={Suma}>
+      <button className="col-4 btn btn-dark m-2" onClick={Suma}>
         +
       </button>
-      <button className="col-4 btn btn-outline-primary" onClick={Resta}>
+      <button className="col-4 btn btn-dark m-2" onClick={Resta}>
         -
       </button>
       <br></br>
-      <button className="col-8 btn btn-outline-primary" onClick={Agregar}>Agregar al carrito</button>
+      <button className="col-8 btn btn-dark m-2" onClick={Agregar}>Agregar al carrito</button>
     </div>
   );
 }

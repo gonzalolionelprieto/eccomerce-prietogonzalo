@@ -1,6 +1,8 @@
 //aca los items
 import React from 'react'
-import Contador from '../itemCounts/itemCounts'
+import ItemDetailButton from '../itemDetaillContainer/itemDetailButton'
+
+import { Link } from "react-router-dom";
 
 export default function Item({prod}) {
     return (
@@ -17,7 +19,10 @@ export default function Item({prod}) {
                 {prod.price}$
               </div>
               <div className="card-footer">
-                 <Contador max={10} inicial={1}/> 
+                <Link to={`/detalle/${prod.id}`}>
+                <ItemDetailButton/>
+                </Link>
+                 
                 
               </div>
                 <br></br>

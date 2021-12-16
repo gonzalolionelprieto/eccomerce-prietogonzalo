@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import { mock } from "../mock/asyncMock";
 import ItemList from "./itemList";
 
+import { useParams } from "react-router-dom";
+
+
 
 
 
@@ -11,14 +14,27 @@ function ItemListContainer({ greeting }) {
     const [productos, setProductos] = useState([]); //se usa el hook para que persistan los datos y poder hacer cambios en el estado.
     const [loading, setLoading] = useState(true);
 
+    const {idCategoria} = useParams();
 
     useEffect(() => {
-        mock
+        
+        if (idCategoria) {
+          mock
+          .then(respuesta => setProductos(respuesta.filter(productos => productos.categoria === idCategoria)))
+          .catch((err) => console.log(err))
+          .finally(() => setLoading(false));
+           
+        } else {
+          mock
           .then((respuesta) => setProductos(respuesta))
           .catch((err) => console.log(err))
           .finally(() => setLoading(false));
-      }, []); //se usa el hook para que se cargue asincronicamente la promesa.
-  
+        }
+      
+        
+      }, [idCategoria]); //se usa el hook para que se cargue asincronicamente la promesa.
+    
+    console.log(idCategoria)  
     
   return (
     <div className="row text-center m-auto">

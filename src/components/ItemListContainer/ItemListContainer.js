@@ -37,7 +37,7 @@ function ItemListContainer({ greeting }) {
     console.log(idCategoria)  
     
   return (
-    <div className="row text-center m-auto">
+    <div className="row text-center p-5 m-auto">
      <h2>{greeting}</h2>
      {
       loading ? 

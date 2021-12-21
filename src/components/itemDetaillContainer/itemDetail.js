@@ -1,7 +1,17 @@
+import Reac,{ useState} from "react";
 import Contador from "../itemCounts/itemCounts";
+import { Link } from "react-router-dom";
+
 
 const ItemDetail = ({ item }) => {
-  console.log("El item", item);
+  
+  const [irCarrito,setIrcarrito]=useState(false)
+  const onAdd = (cantidad) => {
+    console.log(cantidad);
+    setIrcarrito(true);
+   
+};
+
   return (
     <div className="flex row p-4">
       <div className="col-12 col-md-6  d-flex align-items-center">
@@ -21,8 +31,8 @@ const ItemDetail = ({ item }) => {
 
         <div className="row">
             
-           
-            <Contador className="col-6" max={10} inicial={1}/>
+           {!irCarrito?(<Contador className="col-6" max={10} inicial={1} onAdd={onAdd}/>):(<Link to="/cart" className="col-6 btn btn-dark m-2"> IR AL CARRITO</Link>)}
+            
         </div>
         
       </div>

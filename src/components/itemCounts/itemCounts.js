@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Contador({ max, inicial }) {
+function Contador({ max, inicial,onAdd }) {
   const [count, setCount] = useState(inicial); //aca se le asigna un valor inicial en este caso a count de 0
 
   const Suma = () => {
@@ -21,14 +21,15 @@ function Contador({ max, inicial }) {
         <button className="col-2 btn btn-dark m-2" onClick={Suma}>
           +
         </button>
-        <h4 className="col-2 text-center "> {count} </h4>
+        <h4 className="col-2 text-center 
+        "> {count} </h4>
         <button className="col-2 btn btn-dark m-2" onClick={Resta}>
           -
         </button>
       </div>
 
       <br></br>
-      <button className="col-6 btn btn-dark m-2" onClick={Agregar}>
+      <button className="col-6 btn btn-dark m-2" onClick={()=>onAdd(count)}>
         Añadir al carrito
       </button>
     </div>

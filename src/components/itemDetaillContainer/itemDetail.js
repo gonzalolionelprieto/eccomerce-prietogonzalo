@@ -1,17 +1,19 @@
-import Reac,{ useState} from "react";
+import React, { useState, useContext } from "react";
 import Contador from "../itemCounts/itemCounts";
 import { Link } from "react-router-dom";
-
+import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({ item }) => {
-  
-  const [irCarrito,setIrcarrito]=useState(false)
+  const { cartList, agregarAlCarrito } = useContext(CartContext);
+
+  const [irCarrito, setIrcarrito] = useState(false);
   const onAdd = (cantidad) => {
     console.log(cantidad);
+    agregarAlCarrito({ ...item, cantidad: cantidad });
     setIrcarrito(true);
-   
-};
-
+  };
+  console.log(cartList.length
+    );
   return (
     <div className="flex row p-4">
       <div className="col-12 col-md-6  d-flex align-items-center">
@@ -30,11 +32,15 @@ const ItemDetail = ({ item }) => {
         </div>
 
         <div className="row">
-            
-           {!irCarrito?(<Contador className="col-6" max={10} inicial={1} onAdd={onAdd}/>):(<Link to="/cart" className="col-6 btn btn-dark m-2"> IR AL CARRITO</Link>)}
-            
+          {!irCarrito ? (
+            <Contador className="col-6" max={10} inicial={1} onAdd={onAdd} />
+          ) : (
+            <Link to="/cart" className="col-6 btn btn-dark m-2">
+              {" "}
+              IR AL CARRITO
+            </Link>
+          )}
         </div>
-        
       </div>
     </div>
   );

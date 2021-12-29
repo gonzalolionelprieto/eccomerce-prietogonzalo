@@ -10,9 +10,7 @@ function Contador({ max, inicial,onAdd }) {
     count > inicial ? setCount((prev) => prev - 1) : alert("compra minima"); //  ahora se esta haciendo uso de la funcion set para decirle que reste 1 al valor
   };
 
-  const Agregar = () => {
-    console.log("agregaste " + count + " al carrito");
-  };
+  
 
   return (
     <div className="row d-flex justify-content-center m-0">

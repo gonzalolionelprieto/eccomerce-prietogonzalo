@@ -18,7 +18,7 @@ export default function Item({prod}) {
                
               </div>
               <div className="card-body">
-                 <img src={prod.image} className="col-12"/>
+                 <img src={prod.image} className="col-12" alt=''/>
                  <div className='row'>
                      <h4>
                         {prod.nombre}

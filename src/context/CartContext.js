@@ -9,7 +9,7 @@ export const CartContext = createContext([]) ;
 
   
 
-
+  // Agregar  item del carrito
     function agregarAlCarrito(item) {       
 
         const index = cartList.findIndex(i => i.id === item.id)
@@ -26,22 +26,37 @@ export const CartContext = createContext([]) ;
           }
       }
 
-
-      const borrarProducto = (event) => {
-          const buttonRemove=event.target
-          buttonRemove.closest(".producto").remove();
-         
+      // Borra item del carrito
+      const borrarProducto = (item) => {
+      setCartList(cartList.filter(prod => prod.id !== item))
       }
-      
-    function borrarCarrito (){
-        setCartList([])
+
+      // Subtotal item del carrito
+      const subtotalCompra = () => {
+        return ( 
+            cartList.reduce((prev, prod) => (prev + prod.cantidad * prod.price), 0)
+        )
+      }
+
+      // Total item del carrito
+      const totalCompra = () => {
+        return( 
+            cartList.reduce(prod => (subtotalCompra(prod)), 0)
+        )
     }
+     
+     // Vaciar carrito 
+      function borrarCarrito (){
+        setCartList([])
+       }
 
     return (
         <CartContext.Provider value={
             {cartList,
             agregarAlCarrito,
             borrarCarrito,
+            subtotalCompra,
+            totalCompra,
             borrarProducto}
             } >
             {children}

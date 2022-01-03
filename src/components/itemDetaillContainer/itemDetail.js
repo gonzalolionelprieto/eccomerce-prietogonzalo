@@ -7,15 +7,18 @@ const ItemDetail = ({ item }) => {
   const { cartList, agregarAlCarrito } = useContext(CartContext);
 
   const [irCarrito, setIrcarrito] = useState(false);
+
+  
   const onAdd = (cantidad) => {
-    console.log(cantidad);
+  
+  
     agregarAlCarrito({ ...item, cantidad: cantidad });
     setIrcarrito(true);
   };
   console.log(cartList.length
     );
   return (
-    <div className="flex row p-4">
+    <div className="flex row p-4 mt-5">
       <div className="col-12 col-md-6  d-flex align-items-center">
         <img
           className="col-12"
@@ -31,11 +34,11 @@ const ItemDetail = ({ item }) => {
           <h5 className="m-3">{`${item.texto}`}</h5>
         </div>
 
-        <div className="row">
+        <div className="row d-flex justify-content-center">
           {!irCarrito ? (
             <Contador className="col-6" max={10} inicial={1} onAdd={onAdd} />
           ) : (
-            <Link to="/cart" className="col-6 btn btn-dark m-2">
+            <Link to="/cart" className="col-6 btn btn-dark mt-2">
               {" "}
               IR AL CARRITO
             </Link>

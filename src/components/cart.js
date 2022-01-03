@@ -1,17 +1,19 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function Cart() {
-  const { cartList,borrarCarrito,borrarProducto } = useContext(CartContext);
+  const { cartList,borrarCarrito,subtotalCompra,totalCompra,borrarProducto } = useContext(CartContext);
+  
 
 
   return (
-    <div class="container">
-      <div class="row d-flex justify-content-center">
-        <div class="row  ">
+    <div class="container mt-5">
+      <div class="row d-flex justify-content-center ">
+        <div class="row  mt-5 ">
           <div class="col d-flex justify-content-end me-5">
             {" "}
-            <h5> Productos añadidos: </h5>{" "}
+            <h5> Productos añadidos:  {cartList.length} </h5>
           </div>
         </div>
 
@@ -30,23 +32,34 @@ export default function Cart() {
                       <h4>{prod.nombre}</h4>
                     </div>
                   </div>
-                  <div class="col-4 d-flex align-items-center">
-                    <h4>cantidad {prod.cantidad}</h4>
+                  <div class="col-2 d-flex align-items-center">
+                    <h5>cantidad {prod.cantidad}</h5>
                   </div>
 
                   <div class="col-2 d-flex align-items-center">
                     <h5>
-                      ${prod.price} <button class="btn btn-dark borrar" onClick={borrarProducto}> X </button>
+                      ${prod.price} 
                     </h5>
                   </div>
+
+                  <div class="col-2 d-flex align-items-center">
+                    <h5 className="me-5">Subtotal ${subtotalCompra()}</h5>
+                    <button class="btn btn-dark borrar" onClick={() => borrarProducto(prod.id)}> X </button>
+                  </div>
+                  
                 </div>
               </div>
             </div>
           </div>
         ))}
       </div>
+      <div className=" d-flex justify-content-end">
+        <h5 className="col-3">Total: ${totalCompra()} </h5>
+      </div>
       <div>
-          <button class="btn btn-dark m-2" onClick={borrarCarrito}> vaciar carrito  </button>
+          <button class="btn btn-danger m-2" onClick={borrarCarrito}> Vaciar carrito  </button>
+          <Link to="/"><button  class="btn btn-dark m-2"> Seguir comprando  </button></Link>
+          
       </div>
     </div>
   );

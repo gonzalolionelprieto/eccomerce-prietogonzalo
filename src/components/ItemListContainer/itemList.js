@@ -1,21 +1,17 @@
 //aca la lista de itemm
-import React from 'react'
-import Item from './item'
+import React, { memo } from "react";
+import Item from "./item";
 
-export default function ItemList({productos}) {
-    return (
-        <div className="row">
-            {
+const ItemList = memo(({ productos }) => {
+  return (
+    <div className="container-fluid">
+      <div className="row">
+            {productos.map((prod) => (
+            <Item prod={prod} />
+            ))}
+      </div>
+    </div>
+  );
+});
 
-
-                 
-
-            productos.map((prod) => <Item prod={prod} /> )
-            
-
-
-            }
-           
-        </div>
-    )
-}
+export default ItemList;

@@ -5,9 +5,9 @@ import Cartwidget from "../CartWidget";
 const NavBar = () => {
   return (
     <div>
-      <Navbar variant="light" bg="" expand="lg">
+      <Navbar variant="light" bg="" expand="lg" className="navbar-dark bg-dark fixed-top">
         <Container>
-          <Link to="/"  className="nav-link">INICIO</Link>
+          <Link to="/"  className="navbar-brand ">INICIO</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">

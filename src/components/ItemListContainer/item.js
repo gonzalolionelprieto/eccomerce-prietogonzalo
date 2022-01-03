@@ -9,21 +9,20 @@ export default function Item({prod}) {
         <div 
 
             key={prod.id}
-            className='col-md-3 p-3 '
+            className='d-flex flex-column col-12 col-lg-3 '
+          
             >
-              <div className="card-header">
-                <h5 className='text-uppercase'>
-                   {`-  ${prod.categoria}  -`}
-                </h5>
-               
-              </div>
-              <div className="card-body">
-                 <img src={prod.image} className="col-12" alt=''/>
+              
+              <div className="card-body d-flex flex-column justify-content-center ">
+              <Link to={`/detalle/${prod.id}`}>
+                
+                 <img src={prod.image} className="col-12 card-item" alt=''/>
+              </Link>
                  <div className='row'>
                      <h4>
                         {prod.nombre}
                       </h4>
-                      <hr></hr> 
+                      
                  </div>
                  <div className='row'>
                    <h5>
@@ -34,13 +33,13 @@ export default function Item({prod}) {
                  
               </div>
               <div className="card-footer">
-                <Link to={`/detalle/${prod.id}`}>
-                <ItemDetailButton/>
-                </Link>
-                 
+                
+                 <Link to={`/detalle/${prod.id}`}>
+                  <ItemDetailButton/>
+                 </Link>
                 
               </div>
-                <br></br>
+               
             
             </div>
     )

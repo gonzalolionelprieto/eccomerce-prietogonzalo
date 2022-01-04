@@ -3,12 +3,16 @@ import { CartContext } from "../context/CartContext";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-  const { cartList,borrarCarrito,subtotalCompra,totalCompra,borrarProducto } = useContext(CartContext);
+  const { cartList,borrarCarrito,totalCompra,borrarProducto } = useContext(CartContext);
+  
   
 
-
   return (
-    <div class="container mt-5">
+    
+    <div>
+      
+    {!cartList.length <= 0 ? (
+      <div class="container mt-5">
       <div class="row d-flex justify-content-center ">
         <div class="row  mt-5 ">
           <div class="col d-flex justify-content-end me-5">
@@ -33,7 +37,7 @@ export default function Cart() {
                     </div>
                   </div>
                   <div class="col-2 d-flex align-items-center">
-                    <h5>cantidad {prod.cantidad}</h5>
+                    <h5>Cantidad : {prod.cantidad}</h5>
                   </div>
 
                   <div class="col-2 d-flex align-items-center">
@@ -43,8 +47,10 @@ export default function Cart() {
                   </div>
 
                   <div class="col-2 d-flex align-items-center">
-                    <h5 className="me-5">Subtotal ${subtotalCompra()}</h5>
-                    <button class="btn btn-dark borrar" onClick={() => borrarProducto(prod.id)}> X </button>
+                    <h5 className="me-5">Subtotal ${prod.cantidad * prod.price}</h5>
+                    <button type="button" className="btn btn-danger borrar col" onClick={() => borrarProducto(prod.id)}>X</button>
+                     
+
                   </div>
                   
                 </div>
@@ -61,6 +67,12 @@ export default function Cart() {
           <Link to="/"><button  class="btn btn-dark m-2"> Seguir comprando  </button></Link>
           
       </div>
-    </div>
+    </div>) : ( <div className="row
+    d-flex justify-content-center  inicioContainer"> <Link to="/" className="col-2 btn btn-dark mt-2 inicio">
+              
+              IR AL INICIO
+            </Link></div> )
+    }</div>
+    
   );
 }

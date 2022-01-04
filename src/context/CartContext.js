@@ -1,12 +1,12 @@
 import React from 'react'
-import { createContext,useState } from 'react'
+import { createContext,useState,  } from 'react'
 
 export const CartContext = createContext([]) ;
 
  function CartContextProvider({children}) {
 
     const [cartList, setCartList] = useState([])
-
+  
   
 
   // Agregar  item del carrito
@@ -26,24 +26,40 @@ export const CartContext = createContext([]) ;
           }
       }
 
+      
+
       // Borra item del carrito
       const borrarProducto = (item) => {
       setCartList(cartList.filter(prod => prod.id !== item))
       }
 
+
+      // Contador carrito
+            const cartCounter = () => {
+            return (
+              cartList.reduce((prev, prod) => (prev + prod.cantidad), 0)
+            )
+            }
+
+
+
+
       // Subtotal item del carrito
       const subtotalCompra = () => {
         return ( 
-            cartList.reduce((prev, prod) => (prev + prod.cantidad * prod.price), 0)
+            cartList.reduce((prev, prod) => ( prev + prod.cantidad * prod.price), 0)
         )
       }
+      
+      // Total compra
+    const totalCompra = () => {
+      return( 
+          cartList.reduce(prod => (subtotalCompra(prod)) , 0)
+      )
+  }
 
-      // Total item del carrito
-      const totalCompra = () => {
-        return( 
-            cartList.reduce(prod => (subtotalCompra(prod)), 0)
-        )
-    }
+
+      
      
      // Vaciar carrito 
       function borrarCarrito (){
@@ -54,11 +70,12 @@ export const CartContext = createContext([]) ;
         <CartContext.Provider value={
             {cartList,
             agregarAlCarrito,
-            borrarCarrito,
+            cartCounter,
+            borrarProducto,
             subtotalCompra,
             totalCompra,
-            borrarProducto}
-            } >
+            borrarCarrito
+            }} >
             {children}
         </CartContext.Provider>
     )

@@ -1,3 +1,30 @@
 .card-item:hover{
     opacity: 0.8;
 }
+
+.cart-counter{
+    visibility: visible;
+    position: relative;
+    top: -5px;
+    padding: 1px 7px;
+    color: #FFF;
+    height: 6px!important;
+    width: 4px!important;
+    background-color: #d14040;
+    border-radius: 50%;
+}
+
+.borrar{
+    cursor: pointer;
+}
+
+.inicio{
+    position: absolute;
+    top: 50%;
+    margin: 0 auto;
+   ;
+}
+
+.inicioContainer{
+    height: 100vh
+}

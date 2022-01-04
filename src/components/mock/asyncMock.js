@@ -3,7 +3,7 @@
     const mercaderia = [
         {
           "id": 1,
-          "categoria": 'gorras',
+          "categoria": 'Gorras',
           "nombre":"Trown Inc",
           "stock": 1,
           "descripcion": "https://www.trown.com.ar/wp-content/uploads/2020/11/IlustracionesWEB_OK_SemiFlat-copia-1.jpg",
@@ -15,7 +15,7 @@
         },
         {
             "id": 2,
-            "categoria": 'gorras',
+            "categoria": 'Gorras',
             "nombre":"Pine Tree",
             "stock": 1,
             "descripcion": "https://www.trown.com.ar/wp-content/uploads/2020/11/IlustracionesWEB_OK_SemiFlat-copia-1.jpg",
@@ -27,7 +27,7 @@
           },
           {
             "id": 3,
-            "categoria": 'gorras',
+            "categoria": 'Gorras',
             "nombre":"Ice",
             "stock": 1,
             "descripcion": "https://www.trown.com.ar/wp-content/uploads/2020/11/IlustracionesWEB_OK_SemiFlat-copia-1.jpg",
@@ -39,7 +39,7 @@
           },
           {
             "id": 4,
-            "categoria": 'gorras',
+            "categoria": 'Gorras',
             "nombre":"Los Alerces",
             "stock": 1,
             "descripcion": "https://www.trown.com.ar/wp-content/uploads/2020/11/IlustracionesWEB_OK_SemiFlat-copia-1.jpg",
@@ -51,7 +51,7 @@
           },
           {
             "id": 5,
-            "categoria": 'gorras',
+            "categoria": 'Gorras',
             "nombre":"B. Circle",
             "stock": 1,
             "descripcion": "https://www.trown.com.ar/wp-content/uploads/2020/11/IlustracionesWEB_OK_SemiFlat-copia-1.jpg",
@@ -63,7 +63,7 @@
           },
           {
             "id": 6,
-            "categoria": 'gorras',
+            "categoria": 'Gorras',
             "nombre":"Mountain",
             "stock": 1,
             "descripcion": "https://www.trown.com.ar/wp-content/uploads/2020/11/IlustracionesWEB_OK_SemiFlat-copia-1.jpg",
@@ -76,7 +76,7 @@
           {
             "id": 7,
             "nombre": 'Lanin',
-            "categoria":"remeras",
+            "categoria":"Remeras",
             "stock": 1,
             "descripcion": "https://www.trown.com.ar/wp-content/uploads/2021/03/IlustracionesWEB_OK_TablaDeTalles.jpg",
             "texto":"Remera canchera",
@@ -88,7 +88,7 @@
           {
             "id": 8,
             "nombre": 'Ski Patagonia',
-            "categoria":"remeras",
+            "categoria":"Remeras",
             "stock": 1,
             "descripcion": "https://www.trown.com.ar/wp-content/uploads/2021/03/IlustracionesWEB_OK_TablaDeTalles.jpg",
             "texto":"Remera canchera",
@@ -100,7 +100,7 @@
           {
             "id": 9,
             "nombre": 'Snow',
-            "categoria":"remeras",
+            "categoria":"Remeras",
             "stock": 1,
             "descripcion": "https://www.trown.com.ar/wp-content/uploads/2021/03/IlustracionesWEB_OK_TablaDeTalles.jpg",
             "texto":"Remera canchera",

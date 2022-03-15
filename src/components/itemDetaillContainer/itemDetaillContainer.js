@@ -1,7 +1,7 @@
 import React,{ useState, useEffect } from 'react';
-import { mock } from "../mock/asyncMock";
 import { useParams } from "react-router-dom";
 import ItemDetail from './itemDetail';
+import { doc, getDoc, getFirestore } from 'firebase/firestore';
 
 export default function ItemDetaillContainer() {
     const [item, setItem] = useState([]);
@@ -10,10 +10,12 @@ export default function ItemDetaillContainer() {
     const {id} = useParams()
   
     useEffect(() => {
-      //getOneProduct.then((res) => setItem(res)).catch((err) => console.log(err));
-      mock
-      .then(res => setItem(res.find(item => item.id === parseInt(id)))) 
-    });
+      
+      const db = getFirestore()
+      const docDetail = doc(db, 'items', id)
+      getDoc(docDetail)
+      .then(detail => setItem({id: detail.id, ...detail.data()}))
+    },[id]);
   
     return (
       <div>

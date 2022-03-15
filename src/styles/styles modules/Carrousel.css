@@ -1,0 +1,34 @@
+/* Carousel styling */
+#introCarousel,
+.carousel-inner,
+.carousel-item,
+.carousel-item.active {
+  height: 100vh;
+  
+  margin: calc(0,1%) 0;
+}
+
+
+.carousel-item:nth-child(1) {
+  background-image: url('https://www.trown.com.ar/wp-content/uploads/2021/07/Banner-ENVIO-GRATIS-scaled.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.carousel-item:nth-child(2) {
+  background-image: url('https://www.trown.com.ar/wp-content/uploads/2022/01/TrownProductoVerano-12-021-073-scaled.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+
+.carousel-item:nth-child(3) {
+  background-image: url('https://www.trown.com.ar/wp-content/uploads/2021/09/Sin-titulo-scaled.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+

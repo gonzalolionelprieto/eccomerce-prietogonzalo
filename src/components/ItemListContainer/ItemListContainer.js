@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from 'react';
-import { mock } from "../mock/asyncMock";
-import ItemList from "./itemList";
 
+import ItemList from "./itemList";
+import { collection, getFirestore, getDocs, query, where } from 'firebase/firestore'//firebase clase 12
 import { useParams } from "react-router-dom";
 
 
@@ -14,25 +14,29 @@ function ItemListContainer({ greeting }) {
     const [productos, setProductos] = useState([]); //se usa el hook para que persistan los datos y poder hacer cambios en el estado.
     const [loading, setLoading] = useState(true);
 
+   
+
     const {idCategoria} = useParams();
 
     useEffect(() => {
-        
-        if (idCategoria) {
-          mock
-          .then(respuesta => setProductos(respuesta.filter(productos => productos.categoria === idCategoria)))
-          .catch((err) => console.log(err))
-          .finally(() => setLoading(false));
-           
-        } else {
-          mock
-          .then((respuesta) => setProductos(respuesta))
-          .catch((err) => console.log(err))
-          .finally(() => setLoading(false));
-        }
+      const db = getFirestore()
+      if(idCategoria){
+        const queryCollectionCategory  = query(collection(db, 'items'), where('Categoria' ,"==", idCategoria ))
+        getDocs(queryCollectionCategory )
+        .then(resp => setProductos( resp.docs.map(prod => ({ id: prod.id, ...prod.data() }) ) ) )
+        .catch(err => console.log(err))
+        .finally(()=> setLoading(false))
+      }else{
+        const queryCollection = query(collection(db, 'items'))
+        getDocs(queryCollection)
+        .then(resp => setProductos(resp.docs.map(prod => ({ id: prod.id, ...prod.data() }) )))
+        .catch(error => console.log(error))
+        .finally(() => setLoading(false))
+      }
       
-        
-      }, [idCategoria]); //se usa el hook para que se cargue asincronicamente la promesa.
+      
+
+    }, [idCategoria]); //se usa el hook para que se cargue asincronicamente la promesa.
     
     console.log(idCategoria)  
     

@@ -9,6 +9,7 @@ export const CartContext = createContext([]) ;
   
   
 
+
   // Agregar  item del carrito
     function agregarAlCarrito(item) {       
 
@@ -47,7 +48,7 @@ export const CartContext = createContext([]) ;
       // Subtotal item del carrito
       const subtotalCompra = () => {
         return ( 
-            cartList.reduce((prev, prod) => ( prev + prod.cantidad * prod.price), 0)
+            cartList.reduce((prev, prod) => ( prev + prod.cantidad * prod.Price), 0)
         )
       }
       

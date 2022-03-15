@@ -16,17 +16,17 @@ export default function Item({prod}) {
               <div className="card-body d-flex flex-column justify-content-center ">
               <Link to={`/detalle/${prod.id}`}>
                 
-                 <img src={prod.image} className="col-12 card-item" alt=''/>
+                 <img src={prod.Image} className="col-12 card-item" alt=''/>
               </Link>
                  <div className='row'>
                      <h4>
-                        {prod.nombre}
+                        {prod.Nombre}
                       </h4>
                       
                  </div>
                  <div className='row'>
                    <h5>
-                   ${prod.price}
+                   ${prod.Price}
                    </h5>
                     
                  </div>

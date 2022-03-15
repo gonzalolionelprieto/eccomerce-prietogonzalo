@@ -22,16 +22,16 @@ const ItemDetail = ({ item }) => {
       <div className="col-12 col-md-6  d-flex align-items-center">
         <img
           className="col-12"
-          src={`${item.image}`}
-          alt={`${item.image}`}
+          src={`${item.Image}`}
+          alt=""
         ></img>
       </div>
       <div className="col-12 col-md-6">
-        <h1>{`${item.nombre} / $ ${item.price}`}</h1>
+        <h1>{`${item.Nombre} / $ ${item.Price}`}</h1>
 
         <div className="col-12 col-md-10 m-auto p-2">
-          <img className="col-12 p-3" src={`${item.descripcion}`} alt=" "></img>
-          <h5 className="m-3">{`${item.texto}`}</h5>
+          <img className="col-12 p-3" src={`${item.Descripcion}`} alt=" "></img>
+          <h5 className="m-3">{`${item.Texto}`}</h5>
         </div>
 
         <div className="row d-flex justify-content-center">

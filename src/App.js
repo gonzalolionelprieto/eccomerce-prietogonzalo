@@ -5,14 +5,20 @@ import ItemDetaillContainer from "./components/itemDetaillContainer/itemDetaillC
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Cart from "./components/cart";
 import CartContextProvider from "./context/CartContext";
+import Home from "./Home.js";
+
+
 
 function App() {
   return (
     <CartContextProvider>
       <BrowserRouter>
         <NavBar />
+
         <Routes>
-          <Route exact path="/" element={<ItemListContainer />} />
+       
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/Productos" element={<ItemListContainer/>} />
           <Route
             exact
             path="/categoria/:idCategoria"

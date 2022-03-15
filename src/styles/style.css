@@ -1,3 +1,6 @@
+*{
+    scroll-behavior: smooth;
+}
 .card-item:hover{
     opacity: 0.8;
 }
@@ -18,13 +21,13 @@
     cursor: pointer;
 }
 
-.inicio{
-    position: absolute;
-    top: 50%;
-    margin: 0 auto;
-   ;
+
+.titulo{
+    font-size: 5rem;
+    font-weight: 900;
 }
 
-.inicioContainer{
-    height: 100vh
+.sub-titulo{
+    font-size: 1rem;
+    font-weight: 700;
 }

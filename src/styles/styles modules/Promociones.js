@@ -8,7 +8,7 @@ export default function Promociones() {
     <div className="  d-flex justify-content-center m-4" >
             <div className="row d-flex align-items-center justify-content-center ">
             <div className="col-12 col-lg-3 m-2">
-                <div className="card bg-dark text-white">
+                <div className="card bg-dark text-white border-0">
                     <img src="https://www.trown.com.ar/wp-content/uploads/2020/11/respiramos-conciencia.jpg" className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column align-items-center justify-content-center ">
                         <h2 className="card-title">RESPIRAMOS</h2>
@@ -21,7 +21,7 @@ export default function Promociones() {
                 </div>
             </div>
             <div className="col-12 col-lg-3 m-2">
-            <div className="card bg-dark text-white">
+            <div className="card bg-dark text-white border-0">
                     <img src="https://www.trown.com.ar/wp-content/uploads/2020/11/una-gorra-un-arbol.jpg" className="card-img" alt="..."></img>
                     <div className="card-img-overlay d-flex flex-column align-items-center justify-content-center">
                     
@@ -34,7 +34,7 @@ export default function Promociones() {
                 </div>
             </div>
         <div className="col-12 col-lg-3 m-2">
-        <div className="card bg-dark text-white">
+        <div className="card bg-dark text-white border-0">
                 <img src="https://www.trown.com.ar/wp-content/uploads/2020/11/arboles-plantados.jpg" className="card-img" alt="..."></img>
                 <div className="card-img-overlay d-flex flex-column align-items-center justify-content-center ">
                         

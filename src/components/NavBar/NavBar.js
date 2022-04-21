@@ -5,7 +5,7 @@ import Cartwidget from "../CartWidget";
 const NavBar = () => {
   return (
     <div>
-      <Navbar variant="light" bg="" expand="lg" className="navbar-dark bg-dark fixed-top">
+      <Navbar variant="light" bg="" expand="lg" className="navbar-dark bg-dark fixed-top py-3">
         <Container>
           <Link to="/"  className="navbar-brand ">INICIO</Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

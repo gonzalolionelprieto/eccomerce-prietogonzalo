@@ -28,7 +28,7 @@ export default function Cart() {
     e.preventDefault()//evito el comportamiento por defecto ya que me refrescaria la pag
     let orden = {}//genero un nuevo objeto vacio
     orden.date=Timestamp.fromDate(new Date())
-    orden.comprador=dataForm//formulario harcodeado
+    orden.comprador=dataForm//formulario 
     orden.total=totalCompra();
     
     orden.item=cartList.map(cartItem=>{
@@ -46,12 +46,14 @@ export default function Cart() {
     .then(resp => setIdOrden(resp.id))
     .catch(err=>console.log(err))
     .finally(()=> {
+     
       borrarCarrito()
       setDataForm({
           name:"", email:"", phone:""
       })
+      
     })
-
+    console.log(idOrden)  
 
     const collectionStock = collection(db,`items`)
 
@@ -67,15 +69,8 @@ export default function Cart() {
       ))
   
       .catch(err => console.log(err))
-          .finally(()=> console.log('stock actualizado'))
-  
-          batch.commit()
-
-
-
-
-
-
+          .finally(()=> batch.commit() )
+         
     
   } 
 
@@ -84,8 +79,8 @@ export default function Cart() {
   return (
     
     <div>
-     
-    {!cartList.length <= 0 ? (
+    
+    {!cartList.length <= 0  ? (
       <div class="container mt-5">
       <div class="row d-flex justify-content-center ">
         <div class="row  mt-5 ">
@@ -94,7 +89,7 @@ export default function Cart() {
             <h5> Productos añadidos:  {cartList.length} </h5>
           </div>
         </div>
-        {idOrden.length !== 0 && <span>Tu id de compra es:  {idOrden}</span>  }
+       
         {cartList.map((prod) => (
           <div class="card">
             <div class="col-md-10 m-a">
@@ -135,7 +130,7 @@ export default function Cart() {
 
 
 {/* boton modal */}
-<button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button type="button" className="btn btn-dark col-5 me-a" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Generar compra
 </button>
 
@@ -206,22 +201,33 @@ export default function Cart() {
           <button class="btn btn-danger m-2" onClick={borrarCarrito}> Vaciar carrito  </button>
           <Link to="/"><button  class="btn btn-dark m-2"> Seguir comprando  </button></Link>
           
-  {/* cambiar formulario por uno de bootstrap */}
+  
 
 
 
 
 
       </div>
-    </div>) : ( <div className="container
+    </div>) :  (
+      
+      <div className="container
       inicioContainer vh-100  d-flex flex-column justify-content-center"> 
-    <div className="row d-flex flex-column justify-content-center">
+      { idOrden.length !==0 ? (<div className="row d-flex flex-column justify-content-center">
+      <div className=" d-flex  flex-column justify-content-center">
+        <div className="col d-flex flex-column justify-content-center"> <h2 className="col text-center " >Gracias por tu compra! </h2> 
+        <p className="text-center"> Por favor guarda el codigo de identificacion de tu pedido :  <span className="fs-5 text">{idOrden} </span> .En breve un asesor se estara comunicando para finalizar la compra </p></div>
+       
+        <Link to="/" className=" col-8 col-lg-2 p-2 btn btn-sucess mt-2 me-auto inicio ms-auto"> IR AL INICIO </Link>
+      </div>
+      
+    </div> ) : (<div className="row d-flex flex-column justify-content-center">
       <div className=" d-flex  flex-column justify-content-center">
         <h2 className="col text-center " >Todavia no agregaste productos al carrito  Las Mejores Ofertas Te Esperan! </h2>
         <Link to="/" className=" col-8 col-lg-2 p-2 btn btn-dark mt-2 me-auto inicio ms-auto"> IR AL INICIO </Link>
       </div>
       
-    </div>
+    </div>) }
+    
     </div> )
     }</div>
     

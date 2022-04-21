@@ -31,4 +31,12 @@
   background-position: center center;
 }
 
+.btn-C{
+  background-color: #ac8665;
+  text-transform: uppercase;
+  border: 0;
+}
 
+.btn-C:hover{
+  background-color: #d8ab84;
+}
